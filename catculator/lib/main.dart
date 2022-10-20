@@ -16,9 +16,8 @@ class Catculator extends StatelessWidget {
       title: 'Catculator',
       theme: ThemeData(
         brightness: Brightness.dark,
-        fontFamily: 'Georgia',
       ),
-      home: MyCatculator()
+      home: const MyCatculator()
     );
   }
 }
