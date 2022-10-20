@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+
 class MyCatculator extends StatefulWidget {
   const MyCatculator({super.key});
 
@@ -16,20 +17,19 @@ class _MyCatculatorState extends State<MyCatculator> {
       },
       style: ElevatedButton.styleFrom(
         shape: const CircleBorder(),
-        backgroundColor: btncolor,
-        padding: const EdgeInsets.all(30),
+        backgroundColor: btncolor.withOpacity(0.05),
+        padding: const EdgeInsets.all(25),
       ),
       child: Text(
         btntxt,
         style: TextStyle(
-          fontSize: 35,
+          fontSize: 25,
           color: txtcolor,
         ),
       ),
     );
   }
-
-    Widget catbutton1(String btntxt, Color btncolor, Color txtcolor) {
+  Widget catbutton1(String btntxt, Color btncolor, Color txtcolor) {
     return ElevatedButton(
       onPressed: () {
         // Function of this Button
@@ -37,13 +37,13 @@ class _MyCatculatorState extends State<MyCatculator> {
       },
       style: ElevatedButton.styleFrom(
         shape: const CircleBorder(),
-        backgroundColor: btncolor,
-        padding: const EdgeInsets.all(20),
+        backgroundColor: btncolor.withOpacity(0.05),
+        padding: const EdgeInsets.all(15),
       ),
       child: Text(
         btntxt,
         style: TextStyle(
-          fontSize: 35,
+          fontSize: 25,
           color: txtcolor,
         ),
       ),
@@ -53,119 +53,130 @@ class _MyCatculatorState extends State<MyCatculator> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.black,
-      appBar: AppBar(
-        title: const Text("MyCatculator"),
+        resizeToAvoidBottomInset: false,
         backgroundColor: Colors.black,
-      ),
-      body: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 5),
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.end,
-          children: [
-            //Calculator Display
-            Row(
-              mainAxisAlignment: MainAxisAlignment.end,
-              // ignore: prefer_const_literals_to_create_immutables
-              children: [
-                Padding(
-                    padding: const EdgeInsets.all(10.0),
-                    child: Text(
-                      text,
-                      textAlign: TextAlign.left,
-                      style: const TextStyle(color: Colors.white, fontSize: 100),
-                    )),
-              ],
-            ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              children: [
-                //Function Buttons
-                catbutton1('AC', Colors.grey, Colors.black),
-                catbutton1('+/-', Colors.grey, Colors.black),
-                catbutton('%', Colors.grey, Colors.black),
-                catbutton(
-                    '/', const Color.fromARGB(255, 255, 149, 0), Colors.white),
-              ],
-            ),
-            const SizedBox(
-              height: 10,
-            ),
-
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              children: [
-                //Function Buttons
-                catbutton('7', Colors.grey, Colors.black),
-                catbutton('8', Colors.grey, Colors.black),
-                catbutton('9', Colors.grey, Colors.black),
-                catbutton(
-                    'x', const Color.fromARGB(255, 255, 149, 0), Colors.white),
-              ],
-            ),
-            const SizedBox(
-              height: 10,
-            ),
-
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              children: [
-                //Function Buttons
-                catbutton('4', Colors.grey, Colors.black),
-                catbutton('5', Colors.grey, Colors.black),
-                catbutton('6', Colors.grey, Colors.black),
-                catbutton(
-                    '-', const Color.fromARGB(255, 255, 149, 0), Colors.white),
-              ],
-            ),
-            const SizedBox(
-              height: 10,
-            ),
-
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              children: [
-                //Function Buttons
-                catbutton('1', Colors.grey, Colors.black),
-                catbutton('2', Colors.grey, Colors.black),
-                catbutton('3', Colors.grey, Colors.black),
-                catbutton(
-                    '+', const Color.fromARGB(255, 255, 149, 0), Colors.white),
-              ],
-            ),
-            const SizedBox(
-              height: 10,
-            ),
-
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              children: [
-                //Function Buttons
-                ElevatedButton(
-                  onPressed: () {
-                    //Button Function
-                  },
-                  style: ElevatedButton.styleFrom(
-                      shape: const StadiumBorder(),
-                      padding: const EdgeInsets.fromLTRB(34, 20, 120, 20),
-                      backgroundColor: Colors.grey),
-                  // ignore: prefer_const_constructors
-                  child: Text(
-                    "0",
-                    style: const TextStyle(fontSize: 35, color: Colors.white),
-                  ),
-                ),
-                catbutton('.', Colors.grey, Colors.black),
-                catbutton('=', Colors.grey, Colors.black),
-              ],
-            ),
-            const SizedBox(
-              height: 10,
-            ),
-          ],
+        appBar: AppBar(
+          title: const Text("MyCatculator"),
+          backgroundColor: Colors.black,
         ),
-      ),
-    );
+        body: Container(
+          // ignore: prefer_const_constructors
+          decoration: BoxDecoration(
+            image: const DecorationImage(
+              image: AssetImage("C:/Users/leonk/Documents/GitHub/catulator/catculator/assets/images/catculator.jpg"),
+              fit: BoxFit.fill,
+              ),
+          ),
+          child: Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 5),
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.end,
+              children: [
+                //Calculator Display
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.end,
+                  // ignore: prefer_const_literals_to_create_immutables
+                  children: [
+                    Padding(
+                        padding: const EdgeInsets.all(10.0),
+                        child: Text(
+                          text,
+                          textAlign: TextAlign.left,
+                          style: const TextStyle(
+                              color: Colors.white, fontSize: 100),
+                        )),
+                  ],
+                ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  children: [
+                    //Function Buttons
+                    catbutton1('AC', Colors.grey, Colors.white),
+                    catbutton1('+/-', Colors.grey, Colors.white),
+                    catbutton('%', Colors.grey, Colors.white),
+                    catbutton('/', const Color.fromARGB(255, 255, 149, 0),
+                        Colors.white),
+                  ],
+                ),
+                const SizedBox(
+                  height: 10,
+                ),
+
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  children: [
+                    //Function Buttons
+                    catbutton('7', Colors.grey, Colors.white),
+                    catbutton('8', Colors.grey, Colors.white),
+                    catbutton('9', Colors.grey, Colors.white),
+                    catbutton('x', const Color.fromARGB(255, 255, 149, 0),
+                        Colors.white),
+                  ],
+                ),
+                const SizedBox(
+                  height: 10,
+                ),
+
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  children: [
+                    //Function Buttons
+                    catbutton('4', Colors.grey, Colors.white),
+                    catbutton('5', Colors.grey, Colors.white),
+                    catbutton('6', Colors.grey, Colors.white),
+                    catbutton('-', const Color.fromARGB(255, 255, 149, 0),
+                        Colors.white),
+                  ],
+                ),
+                const SizedBox(
+                  height: 10,
+                ),
+
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  children: [
+                    //Function Buttons
+                    catbutton('1', Colors.grey, Colors.white),
+                    catbutton('2', Colors.grey, Colors.white),
+                    catbutton('3', Colors.grey, Colors.white),
+                    catbutton('+', const Color.fromARGB(255, 255, 149, 0),
+                        Colors.white),
+                  ],
+                ),
+                const SizedBox(
+                  height: 10,
+                ),
+
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  children: [
+                    //Function Buttons
+                    ElevatedButton(
+                      onPressed: () {
+                        //Button Function
+                      },
+                      style: ElevatedButton.styleFrom(
+                          shape: const StadiumBorder(),
+                          padding: const EdgeInsets.fromLTRB(34, 20, 120, 20),
+                          backgroundColor: Colors.grey),
+                      // ignore: prefer_const_constructors
+                      child: Text(
+                        "0",
+                        style:
+                            const TextStyle(fontSize: 35, color: Colors.white),
+                      ),
+                    ),
+                    catbutton('.', Colors.grey, Colors.white),
+                    catbutton('=', Colors.grey, Colors.white),
+                  ],
+                ),
+                const SizedBox(
+                  height: 20,
+                ),
+              ],
+            ),
+          ),
+        ));
   }
 
   //CALCULATOR LOGIC
