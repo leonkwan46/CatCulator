@@ -1,32 +1,24 @@
 import 'package:flutter/material.dart';
+import 'catculator.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(const Catculator());
 }
 
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+class Catculator extends StatelessWidget {
+  const Catculator({super.key});
 
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    const title = 'My Catculator';
-
     return MaterialApp(
-      title: 'Flutter',
+      debugShowCheckedModeBanner: false,
+      title: 'Catculator',
       theme: ThemeData(
         brightness: Brightness.dark,
         fontFamily: 'Georgia',
       ),
-      home: Scaffold(
-        appBar: AppBar(
-          title: const Text(title),
-          centerTitle: true,
-        ),
-        body: Center(
-          child: Image.asset(assets/images/catculator.jpg),
-        ),
-      ),
+      home: MyCatculator()
     );
   }
 }
