@@ -152,18 +152,16 @@ class _MyCatculatorState extends State<MyCatculator> {
                   children: [
                     //Function Buttons
                     ElevatedButton(
-                      onPressed: () {
-                        //Button Function
-                      },
+                      onPressed: () {},
                       style: ElevatedButton.styleFrom(
                           shape: const StadiumBorder(),
                           padding: const EdgeInsets.fromLTRB(34, 20, 120, 20),
-                          backgroundColor: Colors.grey),
-                      // ignore: prefer_const_constructors
-                      child: Text(
+                          backgroundColor: Colors.grey.withOpacity(0.05)),
+
+                      child: const Text(
                         "0",
                         style:
-                            const TextStyle(fontSize: 35, color: Colors.white),
+                        TextStyle(fontSize: 25, color: Colors.white),
                       ),
                     ),
                     catbutton('.', Colors.grey, Colors.white),
