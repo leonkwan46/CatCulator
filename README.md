@@ -1,4 +1,4 @@
-# 🐈catulator🐈
+# 🐈CatCulator🐈
 🐈 I am intended to learn Flutter FrameWork by recreating and following YouTube videos.
 
 🐈 This is a Cat-themed Calculator.
