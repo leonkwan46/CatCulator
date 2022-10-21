@@ -8,4 +8,4 @@
 🐈 Added some personal aesthetic designs.
 
 
-![Screenshot_1666364950](https://user-images.githubusercontent.com/66780058/197228713-7e29645b-de62-4fad-8138-755bd9d53028.png)
+![Screenshot_1666364950](https://user-images.githubusercontent.com/66780058/197229026-b4458ff3-1632-4c19-9f6a-6919abe24bd5.png)
