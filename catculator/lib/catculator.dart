@@ -38,7 +38,7 @@ class _MyCatculatorState extends State<MyCatculator> {
       style: ElevatedButton.styleFrom(
         shape: const CircleBorder(),
         backgroundColor: btncolor.withOpacity(0.05),
-        padding: const EdgeInsets.all(15),
+        padding: const EdgeInsets.all(20),
       ),
       child: Text(
         btntxt,
